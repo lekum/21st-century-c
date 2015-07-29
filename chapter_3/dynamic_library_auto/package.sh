@@ -1,12 +1,12 @@
 #! /bin/bash
 
 version=1.0
-package_name=upper
-package_dist_dir=autodemo
+package_name=upper-line
+package_dist_dir=dist
 
 if [ -e $package_dist_dir ]; then rm -r $package_dist_dir; fi
 mkdir -p $package_dist_dir
-cp Makefile.am upper.c upper.h upper_string.c $package_dist_dir
+cp Makefile.am upper.c upper.h upper_line.c $package_dist_dir
 cd $package_dist_dir
 autoscan
 sed -e 's/FULL-PACKAGE-NAME/'$package_name'/' -e 's/VERSION/'$version'/' -e 's|BUG-REPORT-ADDRESS|/dev/null|' \
